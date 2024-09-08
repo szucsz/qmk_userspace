@@ -1,0 +1,6 @@
+CAPS_WORD_ENABLE = yes
+MOUSEKEY_ENABLE = no
+CONSOLE_ENABLE = yes
+DYNAMIC_MACRO_ENABLE = no
+COMMAND_ENABLE = no        # Commands for debug and configuration
+DYNAMIC_TAPPING_TERM_ENABLE = yes
