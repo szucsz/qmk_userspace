@@ -28,7 +28,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum layer_number {
     L_BASE = 0,
     L_FUN,
-    L_WNAV,
     L_SYM,
     L_META,
     L_CURSOR,
@@ -60,48 +59,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_BASE] = LAYOUT(
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
        KC_ESC,      KC_Q,      KC_W,       KC_E,       KC_R,    KC_T,                 KC_Y,        KC_U,       KC_I,       KC_O,          KC_P, KC_GRV,
-       KC_LCTL,     KC_A,      KC_S,    HC(KC_D),   HS(KC_F),   KC_G,                 KC_H,    HS(KC_J),   HC(KC_K),       KC_L,       KC_SCLN, KC_QUOT,
+       KC_LGUI,  HC(KC_A),  HA(KC_S),   HG(KC_D),   HS(KC_F),   KC_G,                 KC_H,     HS(KC_J),   HG(KC_K),   HA(KC_L),   HC(KC_SCLN), KC_QUOT,
        KC_LSFT,     KC_Z,      KC_X,       KC_C,       KC_V,    KC_B,                 KC_N,        KC_M,    KC_COMM,     KC_DOT,       KC_SLSH, KC_BSLS,
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                  XXXXXXX, KC_LALT, KC_TAB, FUN(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  SYM(KC_SPC), KC_DEL,   KC_LGUI, TO(L_CURSOR),
+                  XXXXXXX, KC_LALT, KC_TAB, FUN(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  SYM(KC_SPC), KC_DEL,   KC_LCTL, TO(L_CURSOR),
                                                                  XXXXXXX, TO(L_LAYER), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                                //`------------------------------------' O O O  O O O `------------------------------------'
     ),
 
 // left hand activated
-    //`------' O X O     O O O `------'
+    //`------' O O X     O O O `------'
     [L_FUN] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-      _______,   C(KC_GRV),  KC_HOME,   KC_UP,      KC_END,     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
-      G(KC_TAB), A(KC_TAB),  KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HC(KC_F9), HA(KC_F10), HG(KC_F11),   KC_F12,
-      CW_TOGG,     C(KC_Z), S(KC_DEL),  C(KC_INS), S(KC_INS),   KC_PGDN,                     KC_INS,   C(KC_W), C(KC_PGUP), C(KC_PGDN),   C(KC_F5), C(KC_F12),
+      _______,   C(KC_GRV),G(KC_LEFT),   KC_UP,  G(KC_RIGHT),     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
+       NEXT_W,     PREV_W,   KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HG(KC_F9), HA(KC_F10), HC(KC_F11),   KC_F12,
+      CW_TOGG,     G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V),    KC_PGDN,                     KC_INS,   G(KC_W), C(KC_PGUP), C(KC_PGDN),   C(KC_F5), C(KC_F12),
    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
                                                                      XXXXXXX, TO(L_BASE) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
-    //`------' O O X     O O O `------'
-    [L_WNAV] = LAYOUT(
-    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-      _______,   C(KC_GRV), C(KC_W),  C(KC_PGUP), C(KC_PGDN),   GC(KC_F4),              KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
-      _______,   G(KC_TAB),  KC_ENT, GC(KC_LEFT),  GC(KC_RGHT), GC(KC_D),               KC_F7,   HS(KC_F8), HC(KC_F9), HA(KC_F10), HG(KC_F11),  KC_F12,
-      _______,   S(KC_TAB),  KC_TAB,  GA(KC_LEFT), GA(KC_RGHT), KC_PGDN,                KC_INS,     CW_TOGG,  _______,    _______,    _______, _______,
-    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                              _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                            XXXXXXX, TO(L_BASE),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-    ),
 
 // right hand activated layers
-    //`------' O O O     O X O `------'
+    //`------' O O O     X O O `------'
     [L_SYM] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
         _______, KC_EXLM,     KC_AT,    KC_HASH,  KC_DLR,  KC_PERC,                     KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_COMM,
-        _______, HG(KC_1), HA(KC_2), HC(KC_3), HS(KC_4),   KC_5,                        KC_6,    HS(KC_7), HC(KC_8), HA(KC_9), HG(KC_0),  KC_DOT,
-        _______, XXXXXXX,     KC_LBRC,  KC_RBRC,  KC_LCBR, KC_RCBR,                     KC_UNDS,  KC_MINS,   KC_EQL,  KC_PLUS,  KC_SLSH,  XXXXXXX,
+        _______, HC(KC_1), HA(KC_2),   HG(KC_3),HS(KC_4),   KC_5,                        KC_6,    HS(KC_7), HG(KC_8), HA(KC_9), HC(KC_0),  KC_DOT,
+        _______, XXXXXXX,     KC_LBRC,  KC_RBRC, KC_LCBR, KC_RCBR,                     KC_UNDS,  KC_MINS,   KC_EQL,  KC_PLUS,  KC_SLSH,  XXXXXXX,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, _______, _______, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
                                                            XXXXXXX, TO(L_BASE),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
-    //`------' O O O     O O X `------'
+    //`------' O X O     O X O `------'
     [L_META] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
         QK_BOOT, DB_TOGG,  EE_CLR, DM_REC1, DM_REC2,     XXXXXXX,                             SCRL_TO,  CPI_SW, SCRL_SW, ROT_L15,  ROT_R15, RGB_TOG,
@@ -133,13 +122,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [L_BASE]   = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [L_FUN]    = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [L_WNAV]   = { ENCODER_CCW_CW(GC(KC_LEFT), GC(KC_RGHT)) },
-    [L_SYM]    = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [L_META]   = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [L_BASE]   = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_FUN]    = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_SYM]    = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_META]   = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_CURSOR] = { ENCODER_CCW_CW(C(KC_COMM), C(KC_DOT)) },
-    [L_LAYER]  = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [L_LAYER]  = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
 };
 #endif
 
@@ -172,7 +160,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 if (!is_alt_tab_active) {
                     is_alt_tab_active = true;
-                    register_code(KC_LALT);
+                    register_code(KC_LGUI);
                 }
                 alt_tab_timer = timer_read();
                 register_code(KC_TAB);
@@ -184,7 +172,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 if (!is_alt_tab_active) {
                     is_alt_tab_active = true;
-                    register_code(KC_LALT);
+                    register_code(KC_LGUI);
                 }
                 alt_tab_timer = timer_read();
                 register_code(KC_LSFT);
@@ -200,7 +188,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
     if (is_alt_tab_active && IS_LAYER_OFF(L_FUN)) {
-        unregister_code(KC_LALT);
+        unregister_code(KC_LGUI);
         is_alt_tab_active = false;
     }
 }
@@ -211,11 +199,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     int val_fst = rgblight_get_val();
 
     switch (get_highest_layer(state)) {
-    case L_WNAV:
-        rgblight_sethsv_range(HSV_BLUE, 0, 2);
-        rgblight_set_effect_range( 2, 10);
-        cocot_set_scroll_mode(true);
-        break;
     case L_SYM:
         rgblight_sethsv_range(HSV_RED, 0, 2);
         rgblight_set_effect_range( 2, 10);
@@ -266,9 +249,6 @@ void oled_write_layer_state_user(void) {
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case L_BASE:
             oled_write_P(PSTR("BASE "), false);
-            break;
-        case L_WNAV:
-            oled_write_P(PSTR("WNAV "), false);
             break;
         case L_SYM:
             oled_write_P(PSTR(" SYM "), false);
