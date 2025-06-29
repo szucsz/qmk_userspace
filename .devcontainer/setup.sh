@@ -21,3 +21,5 @@ qmk config user.qmk_home=/workspaces/qmk_firmware
 qmk config user.overlay_dir="$userspacePath"
 
 qmk git-submodule
+
+[ -d /workspaces/qmk_firmware/keyboards/aki27 ] || ln -s /workspaces/qmk_userspace/keyboards/aki27/ /workspaces/qmk_firmware/keyboards/aki27
