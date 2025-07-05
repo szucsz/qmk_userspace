@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LCTL,  HG(KC_A),  HA(KC_S),   HC(KC_D),   HS(KC_F),   KC_G,                 KC_H,     HS(KC_J),   HC(KC_K),   HA(KC_L),   HG(KC_SCLN), KC_QUOT,
        KC_LSFT,     KC_Z,      KC_X,       KC_C,       KC_V,    KC_B,                 KC_N,        KC_M,    KC_COMM,     KC_DOT,       KC_SLSH, KC_BSLS,
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                  XXXXXXX, KC_LALT, KC_TAB, WF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  WS(KC_SPC), KC_DEL,   KC_LCTL, TO(L_CURSOR),
+                  XXXXXXX, KC_LALT, KC_TAB, WF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  WS(KC_SPC), KC_DEL,   KC_LCTL, TG(L_CURSOR),
                                                                  XXXXXXX, DF(L_MB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                                //`------------------------------------' O O O  O O O `------------------------------------'
   ),
@@ -93,17 +93,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       CW_TOGG,     C(KC_Z),  C(KC_X),   C(KC_C),    C(KC_V),    KC_PGDN,                     KC_INS,   C(KC_W),    C(KC_PGUP), C(KC_PGDN), C(KC_F5), C(KC_F12),
    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                                     XXXXXXX, TO(L_WB) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                                     XXXXXXX, TG(L_WF) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     //`------' O O X     O O O `------'
     [L_MF] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
       _______,   C(KC_GRV),G(KC_LEFT),   KC_UP,  G(KC_RIGHT),     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
       M_NEXT_W,  M_PREV_W,   KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HG(KC_F9), HA(KC_F10), HC(KC_F11),   KC_F12,
-      CW_TOGG,     G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V),    KC_PGDN,                     KC_INS,   G(KC_W), SG(KC_LCBR), SG(KC_RCBR),   C(KC_F5), C(KC_F12),
+      CW_TOGG,     G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V),    KC_PGDN,                     KC_INS,   G(KC_W), SG(KC_LCBR), SG(KC_RCBR),   C(KC_F5), SG(KC_4),
    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                                     XXXXXXX, TO(L_MB) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                                     XXXXXXX, TG(L_MF) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     // right hand activated layers
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, XXXXXXX,     KC_LBRC,  KC_RBRC, KC_LCBR, KC_RCBR,                     KC_UNDS,  KC_MINS,   KC_EQL,  KC_PLUS,  KC_SLSH,  XXXXXXX,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, _______, _______, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                           XXXXXXX, TO(L_WB),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                           XXXXXXX, TG(L_WS),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     //`------' O O O     X O O `------'
     [L_MS] = LAYOUT(
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, XXXXXXX,     KC_LBRC,  KC_RBRC, KC_LCBR, KC_RCBR,                     KC_UNDS,  KC_MINS,   KC_EQL,  KC_PLUS,  KC_SLSH,  XXXXXXX,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, _______, _______, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                           XXXXXXX, TO(L_MB),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                           XXXXXXX, TG(L_MS),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     //`------' O X O     O X O `------'
@@ -146,8 +146,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  C(KC_A),   KC_LALT,    KC_LCTL,    KC_LSFT,    KC_F3,                   XXXXXXX, XXXXXXX, XXXXXXX,  KC_END,   KC_UP,  KC_ENT,
         _______,  C(KC_Z), S(KC_DEL),  C(KC_INS),  S(KC_INS),  XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                        _______,   _______,  KC_TAB, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2, KC_SPC, KC_DEL, KC_LGUI, TO(L_WB),
-                                                       XXXXXXX, TO(L_WB),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                        _______,   _______,  KC_TAB, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2, KC_SPC, KC_DEL, KC_LGUI, TG(L_CURSOR),
+                                                       XXXXXXX, TG(L_CURSOR),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     )
     // [L_LAYER] = LAYOUT(
     //   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
