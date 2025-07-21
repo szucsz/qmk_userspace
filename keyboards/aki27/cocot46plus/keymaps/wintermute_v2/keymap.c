@@ -26,12 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_number {
-    L_MB = 0,
+    L_IB = 0,
     L_WB,
     L_WF,
     L_WS,
-    L_MF,
-    L_MS,
+    L_IF,
+    L_IS,
     L_META,
     L_CURSOR
 };
@@ -46,8 +46,8 @@ enum custom_keycodes {
 #define WF(k)     LT(L_WF,k)
 #define WS(k)     LT(L_WS,k)
 #define META(k)   LT(L_META,k)
-#define MF(k)     LT(L_MF,k)
-#define MS(k)     LT(L_MS,k)
+#define IF(k)     LT(L_IF,k)
+#define IS(k)     LT(L_IS,k)
 
 #define HS(k)     MT(MOD_LSFT,k)
 #define HC(k)     MT(MOD_LCTL,k)
@@ -62,13 +62,13 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //`------' O O O     O O O `------'
-  [L_MB] = LAYOUT(
+  [L_IB] = LAYOUT(
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
        KC_ESC,      KC_Q,      KC_W,       KC_E,       KC_R,    KC_T,                 KC_Y,        KC_U,       KC_I,       KC_O,          KC_P, KC_GRV,
        KC_LGUI,  HC(KC_A),  HA(KC_S),   HG(KC_D),   HS(KC_F),   KC_G,                 KC_H,     HS(KC_J),   HG(KC_K),   HA(KC_L),   HC(KC_SCLN), KC_QUOT,
        KC_LSFT,     KC_Z,      KC_X,       KC_C,       KC_V,    KC_B,                 KC_N,        KC_M,    KC_COMM,     KC_DOT,       KC_SLSH, KC_BSLS,
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                  XXXXXXX, KC_LALT, KC_TAB, MF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  MS(KC_SPC), KC_DEL,   KC_LCTL, XXXXXXX,
+                  XXXXXXX, KC_LALT, KC_TAB, IF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  IS(KC_SPC), KC_DEL,   KC_LCTL, XXXXXXX,
                                                                  XXXXXXX, DF(L_WB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                                //`------------------------------------' O O O  O O O `------------------------------------'
   ),
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LSFT,     KC_Z,      KC_X,       KC_C,       KC_V,    KC_B,                 KC_N,        KC_M,    KC_COMM,     KC_DOT,       KC_SLSH, KC_BSLS,
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                   XXXXXXX, KC_LALT, KC_TAB, WF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  WS(KC_SPC), KC_DEL,   KC_RGUI, TG(L_CURSOR),
-                                                                 XXXXXXX, DF(L_MB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                                 XXXXXXX, DF(L_IB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                                //`------------------------------------' O O O  O O O `------------------------------------'
   ),
 
@@ -95,14 +95,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                      XXXXXXX, TG(L_WF) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     //`------' O O X     O O O `------'
-    [L_MF] = LAYOUT(
+    [L_IF] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
       _______,   C(KC_GRV),G(KC_LEFT),   KC_UP,  G(KC_RIGHT),     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
       M_NEXT_W,  M_PREV_W,   KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HG(KC_F9), HA(KC_F10), HC(KC_F11),   KC_F12,
       CW_TOGG,     G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V),    KC_PGDN,                     KC_INS,   G(KC_W), SG(KC_LCBR), SG(KC_RCBR),   C(KC_F11), SG(KC_4),
    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                                     XXXXXXX, TG(L_MF) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                                     XXXXXXX, TG(L_IF) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     // right hand activated layers
@@ -117,14 +117,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                            XXXXXXX, TG(L_WS),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     //`------' O O O     X O O `------'
-    [L_MS] = LAYOUT(
+    [L_IS] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
         _______, KC_EXLM,     KC_AT,    KC_HASH,  KC_DLR,  KC_PERC,                     KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_COMM,
         _______, HC(KC_1), HA(KC_2),   HG(KC_3),HS(KC_4),   KC_5,                        KC_6,    HS(KC_7), HG(KC_8), HA(KC_9), HC(KC_0), KC_DOT,
         _______, XXXXXXX,     KC_LBRC,  KC_RBRC, KC_LCBR, KC_RCBR,                      KC_UNDS,  KC_MINS,   KC_EQL,  KC_PLUS,  KC_SLSH,  S(KC_SCLN),
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, _______, _______, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
-                                                           XXXXXXX, TG(L_MS),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                                                           XXXXXXX, TG(L_IS),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     //`------' O X O     O X O `------'
@@ -159,12 +159,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [L_MB]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_IB]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_WB]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_WF]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
-    [L_MF]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_IF]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_WS]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
-    [L_MS]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_IS]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_META]   = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_CURSOR] = { ENCODER_CCW_CW(C(KC_COMM), C(KC_DOT)) },
 };
@@ -173,8 +173,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 const uint16_t PROGMEM combo_enter_comma_dot[] =     {KC_COMM,     KC_DOT,       COMBO_END};
 const uint16_t PROGMEM combo_enter_vb[] =            {KC_V,        KC_B,         COMBO_END};
 const uint16_t PROGMEM combo_space_rt[] =            {KC_R,        KC_T,         COMBO_END};
-const uint16_t PROGMEM combo_mf_lock_tab_f_bspc[] =  {KC_TAB,      MF(KC_BSPC),  COMBO_END};
-const uint16_t PROGMEM combo_ms_lock_s_spc_del[] =   {MS(KC_SPC),  KC_DEL,       COMBO_END};
+const uint16_t PROGMEM combo_mf_lock_tab_f_bspc[] =  {KC_TAB,      IF(KC_BSPC),  COMBO_END};
+const uint16_t PROGMEM combo_ms_lock_s_spc_del[] =   {IS(KC_SPC),  KC_DEL,       COMBO_END};
 const uint16_t PROGMEM combo_wf_lock_tab_f_bspc[] =  {KC_TAB,      WF(KC_BSPC),  COMBO_END};
 const uint16_t PROGMEM combo_ws_lock_s_spc_del[] =   {WS(KC_SPC),  KC_DEL,       COMBO_END};
 const uint16_t PROGMEM combo_meta[] =                {KC_TAB,      KC_DEL,       COMBO_END};
@@ -183,8 +183,8 @@ combo_t key_combos[] = {
     COMBO(combo_enter_comma_dot, KC_ENT),
     COMBO(combo_enter_vb, KC_ENT),
     COMBO(combo_space_rt, KC_SPACE),
-    COMBO(combo_mf_lock_tab_f_bspc, TG(L_MF)),
-    COMBO(combo_ms_lock_s_spc_del, TG(L_MS)),
+    COMBO(combo_mf_lock_tab_f_bspc, TG(L_IF)),
+    COMBO(combo_ms_lock_s_spc_del, TG(L_IS)),
     COMBO(combo_wf_lock_tab_f_bspc, TG(L_WF)),
     COMBO(combo_ws_lock_s_spc_del, TG(L_WS)),
     COMBO(combo_meta, MO(L_META)),
@@ -254,7 +254,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-    if (is_gui_tab_active && IS_LAYER_OFF(L_MF)) {
+    if (is_gui_tab_active && IS_LAYER_OFF(L_IF)) {
         unregister_code(KC_LGUI);
         is_gui_tab_active = false;
     }
@@ -270,13 +270,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     int val_fst = rgblight_get_val();
 
     switch (get_highest_layer(state)) {
-    case L_MS:
+    case L_IS:
     case L_WS:
         rgblight_sethsv_range(HSV_RED, 0, 2);
         rgblight_set_effect_range( 2, 10);
         cocot_set_scroll_mode(true);
         break;
-    case L_MF:
+    case L_IF:
     case L_WF:
     case L_CURSOR:
         rgblight_sethsv_range(HSV_PURPLE, 0, 2);
@@ -319,19 +319,19 @@ void oled_write_layer_state_user(void) {
     snprintf(buf3, 4, "%3d", angle);
 
     switch (get_highest_layer(layer_state | default_layer_state)) {
-        case L_MB:
+        case L_IB:
             oled_write_P(PSTR("I QWY"), false);
             break;
         case L_WB:
             oled_write_P(PSTR("W QWY"), false);
             break;
-        case L_MS:
+        case L_IS:
             oled_write_P(PSTR("I SYM"), false);
             break;
         case L_WS:
             oled_write_P(PSTR("W SYM"), false);
             break;
-        case L_MF:
+        case L_IF:
             oled_write_P(PSTR("I FUN"), false);
             break;
         case L_WF:
