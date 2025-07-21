@@ -320,19 +320,19 @@ void oled_write_layer_state_user(void) {
 
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case L_MB:
-            oled_write_P(PSTR("A QWE"), false);
+            oled_write_P(PSTR("I QWY"), false);
             break;
         case L_WB:
-            oled_write_P(PSTR("W QWE"), false);
+            oled_write_P(PSTR("W QWY"), false);
             break;
         case L_MS:
-            oled_write_P(PSTR("A SYM"), false);
+            oled_write_P(PSTR("I SYM"), false);
             break;
         case L_WS:
             oled_write_P(PSTR("W SYM"), false);
             break;
         case L_MF:
-            oled_write_P(PSTR("A FUN"), false);
+            oled_write_P(PSTR("I FUN"), false);
             break;
         case L_WF:
             oled_write_P(PSTR("W FUN"), false);
