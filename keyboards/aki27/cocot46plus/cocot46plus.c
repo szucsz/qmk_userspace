@@ -48,6 +48,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define COCOT_ROTATION_DEFAULT 2
 #endif
 
+#ifndef COCOT_SENSITIVITY
+#    define COCOT_SENSITIVITY 0.5
+#endif
+#ifndef COCOT_SMOOTHING_FACTOR
+#    define COCOT_SMOOTHING_FACTOR 0.7
+#endif
+#ifndef COCOT_SENSITIVITY_MULTIPLIER
+#    define COCOT_SENSITIVITY_MULTIPLIER 1.5
+#endif
 
 cocot_config_t cocot_config;
 uint16_t cpi_array[] = COCOT_CPI_OPTIONS;
@@ -74,9 +83,9 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
     static float y_accumulator = 0.0;
     static float prev_x = 0.0, prev_y = 0.0;
 
-    float sensitivity = 0.5;           // Movement sensitivity
-    float smoothing_factor = 0.7;     // Smoothing factor
-    float sensitivity_multiplier = 1.5; // Sensitivity adjustment multiplier
+    float sensitivity = COCOT_SENSITIVITY;           // Movement sensitivity
+    float smoothing_factor = COCOT_SMOOTHING_FACTOR;     // Smoothing factor
+    float sensitivity_multiplier = COCOT_SENSITIVITY_MULTIPLIER; // Sensitivity adjustment multiplier
 
     // Apply rotation angle adjustment
     double rad = (double)angle_array[cocot_config.rotation_angle] * (M_PI / 180) * -1;
