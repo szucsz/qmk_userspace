@@ -160,10 +160,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [L_MB]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
-    [L_WB]     = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [L_WF]     = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [L_WB]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [L_WF]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_MF]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
-    [L_WS]     = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
+    [L_WS]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_MS]     = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_META]   = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
     [L_CURSOR] = { ENCODER_CCW_CW(C(KC_COMM), C(KC_DOT)) },
