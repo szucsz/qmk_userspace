@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_DEFAULT_VAL 0
 
 #define TAPPING_TERM 300
+#define PERMISSIVE_HOLD
 
 #ifdef DYNAMIC_KEYMAP_LAYER_COUNT
     #undef DYNAMIC_KEYMAP_LAYER_COUNT
