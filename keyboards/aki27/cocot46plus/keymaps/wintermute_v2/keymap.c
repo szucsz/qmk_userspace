@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// to compile: qmk compile -kb aki27/cocot46plus -km wintermute
+// to compile: qmk compile -kb aki27/cocot46plus -km wintermute_v2
 
 #include QMK_KEYBOARD_H
 // #include <stdio.h>
