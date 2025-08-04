@@ -190,6 +190,18 @@ combo_t key_combos[] = {
     COMBO(combo_meta, MO(L_META)),
 };
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HS(KC_J):
+        case HS(KC_F):
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}
+
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 bool is_gui_tab_active = false;
