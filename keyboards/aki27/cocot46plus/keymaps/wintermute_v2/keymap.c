@@ -97,8 +97,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //`------' O O X     O O O `------'
     [L_IF] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-      _______,   C(KC_GRV),G(KC_LEFT),   KC_UP,  G(KC_RIGHT),     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
-      M_NEXT_W,  M_PREV_W,   KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HG(KC_F9), HA(KC_F10), HC(KC_F11),   KC_F12,
+      _______,  C(KC_GRV),G(KC_LEFT),   KC_UP,  G(KC_RIGHT),     KC_DEL,                      KC_F1,      KC_F2,    KC_F3,     KC_F4,         KC_F5,    KC_F6,
+      G(KC_GRV),  M_PREV_W,   KC_LEFT,   KC_DOWN,    KC_RGHT,    KC_PGUP,                     KC_F7,   HS(KC_F8), HG(KC_F9), HA(KC_F10), HC(KC_F11),   KC_F12,
       CW_TOGG,     G(KC_Z),  G(KC_X),   G(KC_C),    G(KC_V),    KC_PGDN,                     KC_INS,   G(KC_W), SG(KC_LCBR), SG(KC_RCBR),   C(KC_F11), SG(KC_4),
    //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                               _______, KC_VOLD, KC_VOLU, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2,  KC_SPC, _______,  _______, _______,
