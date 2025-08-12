@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SLEEP
 #define RGBLIGHT_DEFAULT_VAL 0
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 300
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define PERMISSIVE_HOLD
 
