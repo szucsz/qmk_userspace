@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #include "quantum.h"
 // #include <print.h>
 #include "version.h"
+#include "userspace_version.h"
 // #include "cocot46plus.h"
 
 // Defines names for use in layer keycodes and the keymap
@@ -371,7 +372,7 @@ void oled_write_layer_state_user(void) {
     oled_write(buf2, false);
     oled_write_P(PSTR("/"), false);
     oled_write_ln(buf3, false);
-    oled_write_P(PSTR(QMK_VERSION "\n" QMK_BUILDDATE), false);
+    oled_write_P(PSTR(QMK_VERSION "\n" USERSPACE_GIT_HASH "\n" QMK_BUILDDATE), false);
 }
 
 bool oled_task_user(void) {
