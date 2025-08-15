@@ -317,6 +317,8 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_0;
 }
 
+const char *version_info;
+
 void oled_write_layer_state_user(void) {
 
     // int cpi = pointing_device_get_cpi();
@@ -372,7 +374,7 @@ void oled_write_layer_state_user(void) {
     oled_write(buf2, false);
     oled_write_P(PSTR("/"), false);
     oled_write_ln(buf3, false);
-    oled_write_P(PSTR(QMK_VERSION "\n" USERSPACE_GIT_HASH "\n" QMK_BUILDDATE), false);
+    oled_write_P(version_info, false);
 }
 
 bool oled_task_user(void) {
@@ -382,9 +384,10 @@ bool oled_task_user(void) {
 #endif
 
 void keyboard_post_init_user(void) {
-  // Customise these values to desired behaviour
-  //debug_enable=true;
-  //debug_matrix=true;
-  //debug_keyboard=true;
-  //debug_mouse=true;
+    // Customise these values to desired behaviour
+    //debug_enable=true;
+    //debug_matrix=true;
+    //debug_keyboard=true;
+    //debug_mouse=true;
+    version_info = PSTR(QMK_VERSION_SHORT " " USERSPACE_GIT_HASH "\n" QMK_BUILDDATE);
 }

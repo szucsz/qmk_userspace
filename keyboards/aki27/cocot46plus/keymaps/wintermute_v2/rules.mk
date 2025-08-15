@@ -19,6 +19,7 @@ $(USERSPACE_VERSION_FILE): FORCE
 		echo "#pragma once" > $(USERSPACE_VERSION_FILE); \
 		echo "#define USERSPACE_GIT_HASH \"$(CURR_GIT_HASH)\"" >> $(USERSPACE_VERSION_FILE); \
 		echo "#define USERSPACE_VERSION  \"$$(git -C "$(QMK_USERSPACE)" describe --abbrev=0 --tags 2>/dev/null)\"" >> $(USERSPACE_VERSION_FILE); \
+		echo "#define QMK_VERSION_SHORT  \"$$(git -C "$(TOP_DIR)" describe --abbrev=0 --tags 2>/dev/null)\"" >> $(USERSPACE_VERSION_FILE); \
 	fi
 
 generated-files: $(USERSPACE_VERSION_FILE)
