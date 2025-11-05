@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LCTL,  HG(KC_A),  HA(KC_S),   HC(KC_D),   HS(KC_F),   KC_G,                 KC_H,     HS(KC_J),   HC(KC_K),   HA(KC_L),   HG(KC_SCLN), KC_QUOT,
        KC_LSFT,     KC_Z,      KC_X,       KC_C,       KC_V,    KC_B,                 KC_N,        KC_M,    KC_COMM,     KC_DOT,       KC_SLSH, KC_BSLS,
   //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                  XXXXXXX, KC_LALT, KC_TAB, WF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  WS(KC_SPC), KC_DEL,   KC_RGUI, TG(L_CURSOR),
+                  XXXXXXX, KC_LALT, KC_TAB, WF(KC_BSPC), KC_MS_BTN1,                 KC_MS_BTN2,  WS(KC_SPC), KC_DEL,   KC_RGUI, MO(L_CURSOR),
                                                                  XXXXXXX, DF(L_IB), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                                //`------------------------------------' O O O  O O O `------------------------------------'
   ),
@@ -131,20 +131,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //`------' O X O     O X O `------'
     [L_META] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-        QK_BOOT,  DB_TOGG,  EE_CLR, DM_REC1, DM_REC2,     XXXXXXX,                             SCRL_TO,  CPI_SW, SCRL_SW, ROT_L15,  ROT_R15, RGB_TOG,
-        XXXXXXX,  KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,     DM_RSTP,                             SCRL_MO, RGB_VAI, RGB_SAI, RGB_HUI,  RGB_MOD, XXXXXXX,
-        XXXXXXX,  XXXXXXX, XXXXXXX, DM_PLY1, DM_PLY2,     XXXXXXX,                             SCRL_IN, RGB_VAD, RGB_SAD, RGB_HUD, RGB_RMOD, XXXXXXX,
+        XXXXXXX,  XXXXXXX, CA(KC_HOME), XXXXXXX,     XXXXXXX,   EE_CLR,                 SCRL_TO,  CPI_SW, SCRL_SW, ROT_L15,  ROT_R15, RGB_TOG,
+        XXXXXXX,  XXXXXXX, XXXXXXX,  GC(KC_LEFT), GC(KC_RGHT), XXXXXXX,                 SCRL_MO, RGB_VAI, RGB_SAI, RGB_HUI,  RGB_MOD, XXXXXXX,
+        XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,  XXXXXXX,                 SCRL_IN, RGB_VAD, RGB_SAD, RGB_HUD, RGB_RMOD, XXXXXXX,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MS_BTN1,         KC_MS_BTN2,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                             DB_TOGG, QK_BOOT, XXXXXXX, XXXXXXX, KC_MS_BTN1,         KC_MS_BTN2,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                            XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     //`------' O O O     O O O `------'
     [L_CURSOR] = LAYOUT(
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
-         KC_ESC,  C(KC_Q),   C(KC_W), C(KC_PGUP), C(KC_PGDN), C(S(KC_T)),                 XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME,  KC_DEL, KC_BSPC,
-        _______,  C(KC_A),   KC_LALT,    KC_LCTL,    KC_LSFT,    KC_F3,                   XXXXXXX, XXXXXXX, XXXXXXX,  KC_END,   KC_UP,  KC_ENT,
-        _______,  C(KC_Z), S(KC_DEL),  C(KC_INS),  S(KC_INS),  XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT,
+         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     //|------------------------------------------------------------------|            |------------------------------------------------------------------------|
                         _______,   _______,  KC_TAB, KC_BSPC, KC_MS_BTN1,         KC_MS_BTN2, KC_SPC, KC_DEL, KC_LGUI, TG(L_CURSOR),
                                                        XXXXXXX, TG(L_CURSOR),         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
