@@ -3,6 +3,7 @@
     "build_targets": [
         ["kprepublic/bm60hsrgb_iso/rev2", "via"],
         ["xiudi/xd75", "wintermutepp"],
-        ["aki27/cocot46plus", "wintermute_v2"]
+        ["aki27/cocot46plus", "wintermute_v2"],
+        ["keyboardio/atreus", "wintermute_v2"]
     ]
 }
