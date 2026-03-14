@@ -7,5 +7,9 @@
 			"path": "../qmk_firmware"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"qmk": true
+		}
+	}
 }
