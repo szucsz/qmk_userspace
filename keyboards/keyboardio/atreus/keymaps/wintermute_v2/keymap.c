@@ -33,6 +33,7 @@ enum custom_keycodes {
 
 #define CA(k)     C(A(k))
 #define SA(k)     S(A(k))
+#define SC(k)     S(C(k))
 #define SG(k)     S(G(k))
 #define GA(k)     G(A(k))
 #define GC(k)     G(C(k))
@@ -42,28 +43,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,                                   KC_Y,     KC_U,      KC_I,      KC_O,     KC_P,
         HC(KC_A),  HA(KC_S),  HG(KC_D),  HS(KC_F),  KC_G,                                   KC_H,     HS(KC_J),  HG(KC_K),  HA(KC_L), HC(KC_SCLN),
         KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,       KC_GRV,          KC_QUOT,   KC_N,     KC_M,      KC_COMM,   KC_DOT,   KC_SLSH,
-        KC_LCTL,   KC_LALT,   KC_RGUI,   KC_ESC,    KC_TAB,  IF(KC_BSPC),     IS(KC_SPC),   KC_DEL,   XXXXXXX,   XXXXXXX,   XXXXXXX,  KC_BSLS
+        KC_LCTL,   KC_LALT,   KC_RGUI,   KC_ESC,    KC_TAB,  IF(KC_BSPC),     IS(KC_SPC),   KC_DEL,   KC_VOLD,   KC_VOLU,   XXXXXXX,  KC_BSLS
     ),
 
     [L_WB] = LAYOUT(
         KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,                                   KC_Y,     KC_U,      KC_I,      KC_O,     KC_P,
         HG(KC_A),  HA(KC_S),  HC(KC_D),  HS(KC_F),  KC_G,                                   KC_H,     HS(KC_J),  HC(KC_K),  HA(KC_L), HG(KC_SCLN),
         KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,       KC_GRV,          KC_QUOT,   KC_N,     KC_M,      KC_COMM,   KC_DOT,   KC_SLSH,
-        KC_LGUI,   KC_LALT,   KC_LCTL,   KC_ESC,    KC_TAB,  WF(KC_BSPC),     WS(KC_SPC),   KC_DEL,   XXXXXXX,   XXXXXXX,   XXXXXXX,  KC_BSLS
+        KC_LGUI,   KC_LALT,   KC_LCTL,   KC_ESC,    KC_TAB,  WF(KC_BSPC),     WS(KC_SPC),   KC_DEL,   KC_VOLD,   KC_VOLU,   SC(KC_M), KC_BSLS
     ),
 
     [L_IF] = LAYOUT(
         C(KC_GRV), G(KC_LEFT), KC_UP,  G(KC_RIGHT), KC_DEL,                                 KC_INS,    KC_F1,      KC_F2,       KC_F3,     KC_F4,
         I_PREV_W,  KC_LEFT,    KC_DOWN,  KC_RGHT,   KC_PGUP,                                KC_ESC,    HS(KC_F5),  HG(KC_F6),   HA(KC_F7), HC(KC_F8),
         G(KC_Z),   G(KC_X),    G(KC_C),  G(KC_V),   KC_PGDN,   KC_ESC,           KC_INS,    CW_TOGG,   KC_F9,      KC_F10,      KC_F11,    KC_F12,
-        KC_LCTL,   KC_LALT,    KC_RGUI,  KC_VOLD,   KC_VOLU,   KC_BSPC,          KC_SPC,    KC_DEL,    SG(KC_LBRC),SG(KC_RBRC), C(KC_F11), C(KC_F12)
+        KC_LCTL,   KC_LALT,    KC_RGUI,  KC_ESC,    KC_TAB,    KC_BSPC,          KC_SPC,    KC_DEL,    SG(KC_LBRC),SG(KC_RBRC), C(KC_F11), C(KC_F12)
     ),
 
     [L_WF] = LAYOUT(
         C(KC_GRV), KC_HOME,    KC_UP,    KC_END,    KC_DEL,                                 KC_INS,    KC_F1,     KC_F2,     KC_F3,     KC_F4,
         W_PREV_W,  KC_LEFT,    KC_DOWN,  KC_RGHT,   KC_PGUP,                                KC_ESC,    HS(KC_F5), HC(KC_F6), HA(KC_F7), HG(KC_F8),
         G(KC_Z),   G(KC_X),    G(KC_C),  G(KC_V),   KC_PGDN,   KC_ESC,           KC_INS,    CW_TOGG,   KC_F9,     KC_F10,    KC_F11,    KC_F12,
-        KC_RGUI,   KC_LALT,    KC_LCTL,  KC_VOLD,   KC_VOLU,   KC_BSPC,          KC_SPC,    KC_DEL,    C(KC_PGUP),C(KC_PGDN),C(KC_F11), C(KC_F12)
+        KC_RGUI,   KC_LALT,    KC_LCTL,  KC_ESC,    KC_TAB,    KC_BSPC,          KC_SPC,    KC_DEL,    C(KC_PGUP),C(KC_PGDN),C(KC_F11), C(KC_F12)
     ),
 
     [L_IS] = LAYOUT(
