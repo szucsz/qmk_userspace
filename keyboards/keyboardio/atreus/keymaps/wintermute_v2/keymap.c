@@ -56,14 +56,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         C(KC_GRV), G(KC_LEFT), KC_UP,  G(KC_RIGHT), KC_DEL,                                 KC_INS,    KC_F1,      KC_F2,       KC_F3,     KC_F4,
         I_PREV_W,  KC_LEFT,    KC_DOWN,  KC_RGHT,   KC_PGUP,                                KC_ESC,    HS(KC_F5),  HG(KC_F6),   HA(KC_F7), HC(KC_F8),
         G(KC_Z),   G(KC_X),    G(KC_C),  G(KC_V),   KC_PGDN,   KC_ESC,           KC_INS,    CW_TOGG,   KC_F9,      KC_F10,      KC_F11,    KC_F12,
-        KC_LCTL,   KC_LALT,    KC_RGUI,  KC_ESC,    KC_TAB,    KC_BSPC,          KC_SPC,    KC_DEL,    SG(KC_LBRC),SG(KC_RBRC), C(KC_F11), C(KC_F12)
+        KC_LCTL,   KC_LALT,    KC_RGUI,  KC_VOLD,   KC_VOLU,   KC_BSPC,          KC_SPC,    KC_DEL,    SG(KC_LBRC),SG(KC_RBRC), C(KC_F11), C(KC_F12)
     ),
 
     [L_WF] = LAYOUT(
         C(KC_GRV), KC_HOME,    KC_UP,    KC_END,    KC_DEL,                                 KC_INS,    KC_F1,     KC_F2,     KC_F3,     KC_F4,
         W_PREV_W,  KC_LEFT,    KC_DOWN,  KC_RGHT,   KC_PGUP,                                KC_ESC,    HS(KC_F5), HC(KC_F6), HA(KC_F7), HG(KC_F8),
         G(KC_Z),   G(KC_X),    G(KC_C),  G(KC_V),   KC_PGDN,   KC_ESC,           KC_INS,    CW_TOGG,   KC_F9,     KC_F10,    KC_F11,    KC_F12,
-        KC_RGUI,   KC_LALT,    KC_LCTL,  KC_ESC,    KC_TAB,    KC_BSPC,          KC_SPC,    KC_DEL,    C(KC_PGUP),C(KC_PGDN),C(KC_F11), C(KC_F12)
+        KC_RGUI,   KC_LALT,    KC_LCTL,  KC_VOLD,   KC_VOLU,   KC_BSPC,          KC_SPC,    KC_DEL,    C(KC_PGUP),C(KC_PGDN),C(KC_F11), C(KC_F12)
     ),
 
     [L_IS] = LAYOUT(
