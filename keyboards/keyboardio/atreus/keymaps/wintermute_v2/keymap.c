@@ -86,7 +86,7 @@ const uint16_t PROGMEM combo_enter_comma_dot[] =     {KC_COMM,     KC_DOT,      
 const uint16_t PROGMEM combo_enter_vb[] =            {KC_V,        KC_B,         COMBO_END};
 const uint16_t PROGMEM combo_space_rt[] =            {KC_R,        KC_T,         COMBO_END};
 const uint16_t PROGMEM combo_win[] =                 {KC_TAB,      KC_DEL,       COMBO_END};
-const uint16_t PROGMEM combo_mac[] =                 {KC_ESC,      KC_INS,       COMBO_END};
+const uint16_t PROGMEM combo_mac[] =                 {KC_GRV,      KC_QUOT,      COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(combo_enter_comma_dot, KC_ENT),
