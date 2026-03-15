@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [L_IF] = LAYOUT(
-        C(KC_GRV), G(KC_LEFT), KC_UP,  G(KC_RIGHT), KC_DEL,                                 KC_INS,     KC_F1,      KC_F2,       KC_F3,     KC_F4,
+        C(KC_GRV), KC_HOME,    KC_UP,    KC_END,    KC_DEL,                                 KC_INS,     KC_F1,      KC_F2,       KC_F3,     KC_F4,
         I_PREV_W,  KC_LEFT,    KC_DOWN,  KC_RGHT,   KC_PGUP,                                KC_ESC,     HS(KC_F5),  HG(KC_F6),   HA(KC_F7), HC(KC_F8),
         G(KC_Z),   G(KC_X),    G(KC_C),  G(KC_V),   KC_PGDN,   KC_ESC,           KC_INS,    CW_TOGG,    KC_F9,      KC_F10,      KC_F11,    KC_F12,
         KC_LCTL,   KC_LALT,    KC_RGUI,  KC_ESC,    KC_BSPC,   KC_TAB,           KC_DEL,    KC_SPC,     SG(KC_LBRC),SG(KC_RBRC), C(KC_F11), C(KC_F12)
@@ -86,12 +86,14 @@ const uint16_t PROGMEM combo_enter_comma_dot[] =     {KC_COMM,     KC_DOT,      
 const uint16_t PROGMEM combo_enter_vb[] =            {KC_V,        KC_B,         COMBO_END};
 const uint16_t PROGMEM combo_space_rt[] =            {KC_R,        KC_T,         COMBO_END};
 const uint16_t PROGMEM combo_win[] =                 {KC_TAB,      KC_DEL,       COMBO_END};
+const uint16_t PROGMEM combo_mac[] =                 {KC_ESC,      KC_INS,       COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(combo_enter_comma_dot, KC_ENT),
     COMBO(combo_enter_vb, KC_ENT),
     COMBO(combo_space_rt, KC_SPACE),
-    COMBO(combo_win, DF(L_WB)),
+    COMBO(combo_win, PDF(L_WB)),
+    COMBO(combo_mac, PDF(L_IB)),
 };
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
